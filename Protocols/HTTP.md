@@ -6,13 +6,8 @@ When you type a website address into your browser, HTTP is the protocol that sen
 
 In simple terms, HTTP is like a postal service for the internet, delivering messages between your computer and websites. A similar analogy is to think of the server as a telephone service that has a specific number (the server's IP address and a port number).
 
-Every computer on the internet (or a local network) has an internet protocol address (IP Address) that uniquely identifies it. Within a server there may be multiple pieces of software running so how does a client know which one to connect to? Each service 'listens' on a particular port so that clients know where to connect.
+Clients (typically a web browser) will connect to a web server on the common port number 80 or 443, although other port numbers can be specified in the URL.
 
-Some common port numbers:
+Once connected, the client will send a request to the server. The request is comprised of a request string, a number of optional headers, and an optional body. The request string starts with a verb which tells the server what the client is trying to achieve. Verbs like GET, POST, DELETE will tell the server how to act on the request.
 
-Port|Service
--|-
-80|HTTP (web)
-443|HTTPS (secure web)
-25|SMTP (email)
-21|FTP (file transfer)
+The next part of the request string is URI (universal request identifier) which tells the server which object or entity to perform the request on. In a typical web server the client will typically be requesting resources like web pages, scripts, images and stylesheets. In more advanced systems HTTP can be used as an [API - Application Programming Interface](../API.md) protocol.
